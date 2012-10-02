@@ -1,10 +1,7 @@
 package us.nb9.tij;
 
-import us.nb9.tij.holding.AddingGroups;
-import us.nb9.tij.holding.AsListInference;
-import us.nb9.tij.holding.PrintingContainers;
-import us.nb9.tij.holding.PriorityQueueDemo;
-import us.nb9.tij.holding.QueueDemo;
+import us.nb9.tij.holding.ForEachCollections;
+import us.nb9.tij.typeinfo.pets.LiteralPetCreator;
 import android.app.Activity;
 import android.os.Bundle;
 
@@ -28,7 +25,11 @@ public class TIJAndroidActivity extends Activity {
 //				AsListInference.main(null);
 //				PrintingContainers.main(null);
 //				QueueDemo.main(null);
-				PriorityQueueDemo.main(null);
+//				PriorityQueueDemo.main(null);
+//				CollectionSequence.main(null);
+//				NonCollectionSequence.main(null);
+				LiteralPetCreator.main(null);
+				ForEachCollections.main(null);
 			}
     		
     	}).start();
