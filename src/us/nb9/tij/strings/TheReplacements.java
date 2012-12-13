@@ -36,7 +36,7 @@ public class TheReplacements {
 		// Process the find information as you
 		// perform the replacements:
 		while (m.find())
-			m.appendReplacement(sbuf, m.group().toUpperCase());
+			m.appendReplacement(sbuf, "SHIT");
 		// Put in the remainder of the text:
 		m.appendTail(sbuf);
 		print(sbuf);

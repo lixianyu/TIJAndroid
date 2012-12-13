@@ -13,6 +13,7 @@ public class TIJAndroidActivity extends Activity {
 	private static final boolean DEBUG = TIJAndroidConfig.DEBUG && true;
 
 	private static TIJAndroidActivity mInstance;
+	private Thread mThread;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -42,14 +43,18 @@ public class TIJAndroidActivity extends Activity {
 		if (DEBUG)
 			print_v(TAG, "Leave onPause()");
 	}
+	
+	private Runnable runnalbe = new Runnable() {
+		@Override
+		public void run() {
+			TIJTest tijt = TIJTestFactory.createTest();
+			tijt.doTest();
+		}
+	};
 
 	private void runTest() {
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				TIJTest tijt = TIJTestFactory.createTest();
-				tijt.doTest();
-			}
-		}).start();
+		mThread = new Thread(runnalbe);
+		mThread.setName("testThread");
+		mThread.start();
 	}
 }

@@ -2,7 +2,10 @@ package us.nb9.tij.dotest;
 
 import static net.mindview.util.Print.*;
 import us.nb9.tij.TIJAndroidConfig;
+import us.nb9.tij.concurrency.*;
 import us.nb9.tij.strings.*;
+import us.nb9.tij.typeinfo.*;
+import us.nb9.tij.typeinfo.toys.ToyTest;
 
 public class TIJTestImpl implements TIJTest {
 	private static String TAG = "TIJTestImpl";
@@ -25,7 +28,11 @@ public class TIJTestImpl implements TIJTest {
 //		 TestRegularExpression.test();
 //		 Groups.test();
 //		SplitDemo.main(null);
-		TheReplacements.test();
+//		TheReplacements.test();
+//		BetterRead.main(null);
+//		ThreatAnalyzer.main(null);
+//		ToyTest.test();
+		CallableDemo.main(null);
 		print_v(TAG, "Leave doTest()");
 	}
 

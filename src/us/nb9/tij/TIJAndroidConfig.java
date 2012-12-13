@@ -23,8 +23,8 @@ public class TIJAndroidConfig {
 	public static String INTERNAL_DIR; // /data/data/us.nb9.tij/files/Java
 	
 	public static void init(Context context) {
-		createDir();
-		initFiles(context);
+		createDir(context);
+//		initFiles(context);
 		initUmeng(context);
 	}
 	
@@ -35,7 +35,7 @@ public class TIJAndroidConfig {
 		if (DEBUG) print_v(TAG, "Enter initFiles()");
 	}
 	
-	private static void createDir() {
+	private static void createDir(Context context) {
 		if (DEBUG) print_d(TAG, "Enter createDir()");
 		String eFileString = Environment.getExternalStorageDirectory().getAbsolutePath();
 		EXTERNAL_DIR = eFileString + File.separator + "TIJAndroid";
@@ -56,6 +56,10 @@ public class TIJAndroidConfig {
 				mkOk = file.mkdirs();
 				if (!mkOk) { //Try again.
 					mkOk = file.mkdirs();
+					if (mkOk) { 
+						InitResources irs = new InitResources(context);
+						irs.CopyAssets("Java", curDir);
+					}
 				}
 				else {
 					if (DEBUG) print_i(TAG, "created dir : " + i + "..." + curDir);
